@@ -19,14 +19,20 @@ Installation
 
 Source it in your html:
 
-    <script type="text/javascript" src="path/to/tab.js"></script>
+```html
+<script type="text/javascript" src="path/to/tab.js"></script>
+```
 
-Initialize a tab object
+Initialize a tab object:
 
-    var tab = new Tab();
+```javascript
+var tab = new Tab();
+```
 
-And that's it. Unless you want it to things. 
-Oh, and there are no dependencies. So that's kinda cool, I guess.
+And that's it. Unless you want it to things.
+
+Oh, and there are *no dependencies* aside from localStorage support. 
+So that's kinda cool, I guess.
 
 
 Usage
@@ -36,19 +42,21 @@ The ```Tab()``` method takes in an object that specifies the functions to call
 when on and off events are triggered, and supports a number of options.
 Here are their defaults:
 
-    var tab = new Tab({
+```javascript
+var tab = new Tab({
 
-		/* Code you only want to happen in one tab */
-		on: function() {},
-		
-		/* Code to do when a tab is done being on */
-		off: function() {},
+	/* Code you only want to happen in one tab */
+	on: function() {},
+	
+	/* Code to do when a tab is done being on */
+	off: function() {},
 
-		/* Trigger on without waiting for other tabs to turn off */
-		/* Not yet implemented, but shouldn't take long */  
-		force: false
+	/* Trigger on without waiting for other tabs to turn off */
+	/* Not yet implemented, but shouldn't take long */  
+	force: false
 
-	});
+});
+```
 
 By default, ```on``` and ```off``` are empty functions, in case that wasn't clear.
 You could initialize a bunch of tabs and have them do nothing. But that's silly. 
@@ -58,9 +66,9 @@ Still to do
 -----------
 
  * Implement tab identifiers so multiple tab groups can exist across browsers. 
- 	(Something like ```group : [group_name]```)
+ 	Something like ```group : [group_name]```.
  * Closure-ify the javascript.
  * Implement the ```force``` option.
  * Pass arguments to ```on``` and ```off```.
  * Allow for overriding of global ```force``` setting on a per-call basis.
- 	(for example, ```tab.on(false);```)
+ 	For example, ```tab.on(false);```.
