@@ -65,10 +65,10 @@ You could initialize a bunch of tabs and have them do nothing. But that's silly.
 Still to do
 -----------
 
- - [ ] Implement tab identifiers so multiple tab groups can exist across browsers. 
+ - Implement tab identifiers so multiple tab groups can exist across browsers. 
  	Something like ```group : [group_name]```.
- - [ ] Closure-ify the javascript.
- - [ ] Implement the ```force``` option.
- - [ ] Pass arguments to ```on``` and ```off```.
- - [ ] Allow for overriding of global ```force``` setting on a per-call basis.
+ - Closure-ify the javascript.
+ - Implement the ```force``` option.
+ - Pass arguments to ```on``` and ```off```.
+ - Allow for overriding of global ```force``` setting on a per-call basis.
  	For example, ```tab.on(false);```.
