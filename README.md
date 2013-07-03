@@ -32,13 +32,7 @@ Source it in your html:
 <script type="text/javascript" src="path/to/tab.js"></script>
 ```
 
-Initialize a tab object:
-
-```javascript
-var tab = new Tab();
-```
-
-And that's it. Unless you want it to things.
+And that's it. 
 
 Oh, and there are *no dependencies* aside from localStorage support. 
 So that's kinda cool, I guess.
@@ -46,6 +40,26 @@ So that's kinda cool, I guess.
 
 Usage
 -----
+
+Initialize a tab object in any page you want to track.
+
+```javascript
+var tab = new Tab({
+  on: function()  { alert("on!");  },
+  off: function() { alert("off!"); }
+});
+```
+
+Turning a tab on turns all other tabs off, and can be done as such: 
+
+```javascript
+tab.on();
+```
+Manually turning a tab off is similar:
+
+```javascript
+tab.off();
+```
 
 The ```Tab()``` method takes in an object that specifies the functions to call
 when on and off events are triggered, and supports a number of options.
@@ -67,6 +81,7 @@ var tab = new Tab({
 });
 ```
 
+
 By default, ```on``` and ```off``` are empty functions, in case that wasn't clear.
 You could initialize a bunch of tabs and have them do nothing. But that's silly. 
 
@@ -81,6 +96,7 @@ Still to do
  - Pass arguments to ```on``` and ```off```.
  - Allow for overriding of global ```force``` setting on a per-call basis.
  	For example, ```tab.on(false);```.
+ - Add a ```.state()``` method to see if a tab is on or off.
 
 
 [1]: http://technoheads.org/apps/crosstab/index.html
