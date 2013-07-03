@@ -38,8 +38,8 @@ Oh, and there are *no dependencies* aside from localStorage support.
 So that's kinda cool, I guess.
 
 
-Usage
------
+Usage, in short
+---------------
 
 Initialize a tab object in any page you want to track.
 
@@ -49,6 +49,9 @@ var tab = new Tab({
   off: function() { alert("off!"); }
 });
 ```
+
+By default, ```on``` and ```off``` are empty functions.
+You could initialize a bunch of tabs and have them do nothing. But that's silly.
 
 Turning a tab on turns all other tabs off, and can be done as such: 
 
@@ -61,7 +64,11 @@ Manually turning a tab off is similar:
 tab.off();
 ```
 
-The ```Tab()``` method takes in an object that specifies the functions to call
+
+Usage, in long
+--------------
+
+The ```Tab()``` object takes in an object that specifies the functions to call
 when on and off events are triggered, and supports a number of options.
 Here are their defaults:
 
@@ -75,15 +82,32 @@ var tab = new Tab({
 	off: function() {},
 
 	/* Trigger on without waiting for other tabs to turn off */
-	/* Not yet implemented, but shouldn't take long */  
 	force: false
 
 });
 ```
 
+An instance of the ```Tab()``` object supports a number of methods:
 
-By default, ```on``` and ```off``` are empty functions, in case that wasn't clear.
-You could initialize a bunch of tabs and have them do nothing. But that's silly. 
+```javascript
+/* Turn a tab on. Pass in args to your supplied method, although this doesn't
+ * do anything for now. Force is a string and can either be "off" or "on". 
+ */
+tab.on([args, force]); 
+
+/* Turns a tab off. Again, pass it arguments if you'd like. Nothing to force
+ * here, though. 
+ */ 
+tab.off([args]);
+
+/* Get the current status of a tab. Returns true if on, false otherwise. 
+ */ 
+tab.status();
+
+/* Show the tab's id. */
+tab.id;
+
+```
 
 
 Still to do
@@ -91,12 +115,7 @@ Still to do
 
  - Implement tab identifiers so multiple tab groups can exist across browsers. 
  	Something like ```group : [group_name]```.
- - Closure-ify the javascript.
- - Implement the ```force``` option.
  - Pass arguments to ```on``` and ```off```.
- - Allow for overriding of global ```force``` setting on a per-call basis.
- 	For example, ```tab.on(false);```.
- - Add a ```.state()``` method to see if a tab is on or off.
+ - Bug fixing.
 
-
-[1]: http://technoheads.org/apps/crosstab/index.html
+[1]: http://technoheads.org/apps/crosstab
