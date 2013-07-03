@@ -8,5 +8,28 @@
   
 
   <script src="tab.js"></script>
+  <script>
+
+  ////////////////////////////////////////
+  // Testing stuff
+  ////////////////////////////////////////
+
+  var opt = {
+    on: function(){ 
+      console.log("on"); 
+      document.write("<h1>It's on</h1>");
+    },
+    off: function(){ 
+      console.log("off"); 
+      document.write("<h1>It's on</h1>");
+    }
+  }
+
+  var t = new Tab(opt);
+
+
+  // NOTE that file:// doesn't fire localStorage events properly / as expected.
+  // Submit a bug report if there isn't one already.
+  </script>
 </body>
 </html>
