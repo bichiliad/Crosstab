@@ -6,6 +6,9 @@
 </head>
 <body>
   
+  <h1>It's <span id="content">currently not doing anything</span>.</h1>
+  <button onclick="tab.on()">On</button>
+  <button onclick="tab.off()">Off</button>
 
   <script src="tab.js"></script>
   <script>
@@ -17,15 +20,15 @@
   var opt = {
     on: function(){ 
       console.log("on"); 
-      document.write("<h1>It's on</h1>");
+      document.getElementById("content").innerHTML = "on";
     },
     off: function(){ 
       console.log("off"); 
-      document.write("<h1>It's on</h1>");
+      document.getElementById("content").innerHTML = "off";
     }
   }
 
-  var t = new Tab(opt);
+  var tab = new Tab(opt);
 
 
   // NOTE that file:// doesn't fire localStorage events properly / as expected.

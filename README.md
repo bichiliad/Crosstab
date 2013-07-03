@@ -14,6 +14,15 @@ Use it when your app...
  - Fights with itself and needs to be kept in line.
 
 
+Demo
+----
+
+The contents of this repo are more or less hosted on my own site [here][1]. 
+Check it out, or pull the repo and host it somewhere.
+
+For some reason, ```localStorage``` events don't trigger properly on 
+local files. 
+
 Installation
 ------------
 
@@ -72,3 +81,6 @@ Still to do
  - Pass arguments to ```on``` and ```off```.
  - Allow for overriding of global ```force``` setting on a per-call basis.
  	For example, ```tab.on(false);```.
+
+
+[1]: http://technoheads.org/apps/crosstab/index.html

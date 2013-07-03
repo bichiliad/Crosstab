@@ -118,18 +118,3 @@ Tab.prototype._unlisten = function(fn){
   window.removeEventListener("storage", fn_wrapper, false);
 }
 
-
-////////////////////////////////////////
-// Testing stuff
-////////////////////////////////////////
-
-var opt = {
-  on: function(){ console.log("on"); },
-  off: function(){ console.log("off"); }
-}
-
-var t = new Tab(opt);
-
-
-// NOTE that file:// doesn't fire localStorage events properly / as expected.
-// Submit a bug report if there isn't one already.
