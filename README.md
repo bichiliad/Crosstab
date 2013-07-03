@@ -8,10 +8,10 @@ would be a nice thing to have.
 
 Use it when your app...
 
- * Plays music and shouldn't play a bunch of things at once! (like Soundcloud)
- * Writes to local files (lock contention, etc).
- * Is a multiplayer game and should only have one person per computer
- * Fights with itself and needs to be kept in line.
+ - Plays music and shouldn't play a bunch of things at once! (like Soundcloud)
+ - Writes to local files (lock contention, etc).
+ - Is a multiplayer game and should only have one person per computer
+ - Fights with itself and needs to be kept in line.
 
 
 Installation
@@ -65,10 +65,10 @@ You could initialize a bunch of tabs and have them do nothing. But that's silly.
 Still to do
 -----------
 
- * Implement tab identifiers so multiple tab groups can exist across browsers. 
+ - [ ] Implement tab identifiers so multiple tab groups can exist across browsers. 
  	Something like ```group : [group_name]```.
- * Closure-ify the javascript.
- * Implement the ```force``` option.
- * Pass arguments to ```on``` and ```off```.
- * Allow for overriding of global ```force``` setting on a per-call basis.
+ - [ ] Closure-ify the javascript.
+ - [ ] Implement the ```force``` option.
+ - [ ] Pass arguments to ```on``` and ```off```.
+ - [ ] Allow for overriding of global ```force``` setting on a per-call basis.
  	For example, ```tab.on(false);```.
