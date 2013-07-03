@@ -18,10 +18,13 @@ Demo
 ----
 
 The contents of this repo are more or less hosted on my own site [here][1]. 
-Check it out, or pull the repo and host it somewhere.
+Try it out by opening it in a few tabs and pressing the "on" and "off" 
+buttons. Alternately, pull the repo and host it somewhere.
 
 For some reason, ```localStorage``` events don't trigger properly on 
-local files. 
+```file://``` urls, so it does need to be hosted (or, at least this is
+what I've noticed in Chrome). 
+
 
 Installation
 ------------
@@ -116,6 +119,6 @@ Still to do
  - Implement tab identifiers so multiple tab groups can exist across browsers. 
  	Something like ```group : [group_name]```.
  - Pass arguments to ```on``` and ```off```.
- - Bug fixing.
+ - Bug fixing (for some reason, on() needs to be called twice. Not ok). 
 
 [1]: http://technoheads.org/apps/crosstab
